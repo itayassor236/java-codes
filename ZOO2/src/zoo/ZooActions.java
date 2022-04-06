@@ -428,7 +428,7 @@ public class ZooActions {
 	   {
 		   MessageUtility.logBooleanFunction(array[j].getName(), "eat()",array[k].getName(), false);
 	   }
-	   System.out.print("finish");
+	  
    }
    
    }
