@@ -3,8 +3,9 @@ package plants;
 import utilities.MessageUtility;
 
 /**
- * @author baroh
- *
+ * 07 April 2022
+ * @author BarMor
+ * @see Plant
  */
 public class Lettuce extends Plant {
 	public Lettuce() {

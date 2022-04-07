@@ -9,26 +9,17 @@ import mobility.Point;
 import utilities.MessageUtility;
 
 /**
- * @author baroh
- *
+ * 07 April 2022
+ * @author ItayAsor
  */
 public abstract class Plant implements IEdible, ILocatable {
-	/**
-	 * 
-	 */
+
 	private double height;
-	/**
-	 * 
-	 */
+
 	private Point location;
-	/**
-	 * 
-	 */
+
 	private double weight;
 
-	/**
-	 * 
-	 */
 	public Plant() {
 		Random rand = new Random();
 		int x = rand.nextInt(30);
@@ -39,48 +30,48 @@ public abstract class Plant implements IEdible, ILocatable {
 		MessageUtility.logConstractor("Plant", "Plant");
 	}
 
-	/*
-	 * (non-Javadoc)
+
+	/**
 	 * 
-	 * @see food.IFood#getFoodtype()
+	 * @return food type
 	 */
-	@Override
 	public EFoodType getFoodtype() {
 		MessageUtility.logGetter(this.getClass().getSimpleName(), "getFoodType", EFoodType.VEGETABLE);
 		return EFoodType.VEGETABLE;
 	}
 
 	/**
-	 * @return
+	 * 
+	 * @return height
 	 */
 	public double getHeight() {
 		MessageUtility.logGetter(this.getClass().getSimpleName(), "getHeight", this.height);
 		return this.height;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
 	 * 
-	 * @see mobility.ILocatable#getLocation()
+	 * @return location
 	 */
-	@Override
 	public Point getLocation() {
 		MessageUtility.logGetter(this.getClass().getSimpleName(), "getLocation", this.location);
 		return this.location;
 	}
 
-	/**
-	 * @return
+	/** 
+	 * 
+	 * @return weight
 	 */
 	public double getWeight() {
 		MessageUtility.logGetter(this.getClass().getSimpleName(), "getWeight", this.weight);
 		return weight;
 	}
-
 	/**
+	 * 
 	 * @param height
-	 * @return
+	 * @return if is success or not
 	 */
+
 	public boolean setHeight(double height) {
 
 		boolean isSuccess = (height >= 0);
@@ -93,12 +84,12 @@ public abstract class Plant implements IEdible, ILocatable {
 		return isSuccess;
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
 	 * 
-	 * @see mobility.ILocatable#setLocation(mobility.Point)
+	 * @param newLocation
+	 * @return if is success or not
 	 */
-	@Override
+	
 	public boolean setLocation(Point newLocation) {
 		boolean isSuccess = Point.cheackBounderies(newLocation);
 		if (isSuccess) {
@@ -107,11 +98,12 @@ public abstract class Plant implements IEdible, ILocatable {
 		MessageUtility.logSetter(this.getClass().getSimpleName(), "setLocation", newLocation, isSuccess);
 		return isSuccess;
 	}
-
 	/**
+	 * 
 	 * @param weight
-	 * @return
+	 * @return if is success or not
 	 */
+
 	public boolean setWeight(double weight) {
 		boolean isSuccess = (weight >= 0);
 		if (isSuccess) {
@@ -123,13 +115,10 @@ public abstract class Plant implements IEdible, ILocatable {
 
 		return isSuccess;
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
+	/**
+	 * @return class name
 	 */
-	@Override
+
 	public String toString() {
 		return "[" + this.getClass().getSimpleName() + "] ";
 	}
