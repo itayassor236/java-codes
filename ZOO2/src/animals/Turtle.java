@@ -6,14 +6,22 @@ import food.*;
 import java.util.Random;
 import mobility.Point;
 import utilities.MessageUtility; 
-
+/**
+ * class of the animal: Turtle
+ * @version 07 April 2022
+ * @author Bar_Mor
+ *
+ */
 public class Turtle extends Chew {
 	
 	private int age;
 	private final static Point tstartpoint = new Point(80,0);
 	private final static IDiet turtlediet = new Herbivore();
 	
-	
+	/**
+	 * 
+	 * @param name
+	 */
 	public Turtle(String name)
 	{
 		super(name,tstartpoint);
@@ -22,7 +30,11 @@ public class Turtle extends Chew {
 		setAge(1);
 		MessageUtility.logConstractor("Turtle", name);
 	}
-	
+	/**
+	 * 
+	 * @param name
+	 * @param p
+	 */
 	public Turtle(String name,Point p)
 	{
 		super(name,p);
@@ -31,12 +43,17 @@ public class Turtle extends Chew {
 		setAge(1);
 		MessageUtility.logConstractor("Turtle", name);
 	}
-	
+	/**
+	 * @return food type
+	 */
 	public EFoodType getFoodType()
 	{
 		return EFoodType.MEAT;
 	}
-	
+	/**
+	 * @param food
+	 * @return true or false
+	 */
 	public boolean eat(IEdible food)
 	{
 		double newweight = super.getDiet().eat(this, food);
@@ -49,7 +66,11 @@ public class Turtle extends Chew {
     	}
     	return false;
 	}
-	
+	/**
+	 * 
+	 * @param ta
+	 * @return true or false
+	 */
 	public boolean setAge(int ta)
 	{
 		if(ta>500||ta<0)
@@ -64,18 +85,25 @@ public class Turtle extends Chew {
 			return true;
 		}
 	}
-	
+	/**
+	 * 
+	 * @return age
+	 */
 	public double getAge()
 	{
 		MessageUtility.logGetter(getName(),"getAge()", this.age);
 		return this.age;
 	}
-	
+	/**
+	 * @return massage
+	 */
 	public void chew()
 	{
 		MessageUtility.logSound(super.getName(),"Retracts its head in then eats quietly");
 	}
-	
+	/**
+	 * @return Turtle name
+	 */
 	public String toString()
     {
 		return "[Turtle]:" + this.getName();

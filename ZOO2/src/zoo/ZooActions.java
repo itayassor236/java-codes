@@ -5,9 +5,18 @@ import mobility.Point;
 import utilities.MessageUtility;
 
 import java.util.*;
-
+/**
+ * 
+ * @author ItayAsor
+ *
+ */
 public class ZooActions {
-	
+	/**
+	 * 
+	 * @param animal
+	 * @param food
+	 * @return true or false
+	 */
 	public boolean eat(Object animal,IEdible food)
 	{
 		if(animal instanceof Animal)
@@ -21,6 +30,12 @@ public class ZooActions {
 		}
 		return false;
 	}
+	/**
+	 * 
+	 * @param animal
+	 * @param point
+	 * @return true or false
+	 */
 	
 	public static boolean move(Object animal, Point point)
 	{
@@ -63,7 +78,10 @@ public class ZooActions {
 	}
 
     
-	
+	/**
+	 * 
+	 * @param args
+	 */
    public static void main(String[] args)
    {
 	   Animal array[];
