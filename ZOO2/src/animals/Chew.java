@@ -19,6 +19,11 @@ public abstract class Chew extends Animal{
 		super(name,location);
 	}
 	
+	public Chew(Point startlocation, int size, String col, int horSpeed, int verSpeed) {
+		super(startlocation,size,col,horSpeed,verSpeed);
+		
+	}
+	
 	public abstract void chew();
 	
 	public void makeSound()

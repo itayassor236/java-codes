@@ -19,6 +19,11 @@ public abstract class Roar extends Animal{
 		super(name,location);
 	}
 	
+	public Roar(Point startlocation, int size, String col, int horSpeed, int verSpeed) {
+		super(startlocation,size,col,horSpeed,verSpeed);
+		
+	}
+
 	public abstract void roar();
 	
 	public void makeSound()

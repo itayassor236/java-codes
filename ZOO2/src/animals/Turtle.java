@@ -43,6 +43,14 @@ public class Turtle extends Chew {
 		setAge(1);
 		MessageUtility.logConstractor("Turtle", name);
 	}
+	
+	public Turtle(int size,String col,int horSpeed,int verSpeed)
+	{
+		super(tstartpoint,size,col,horSpeed,verSpeed);
+		super.setDiet(turtlediet);
+		super.setWeight(1.0);
+		
+	}
 	/**
 	 * @return food type
 	 */
@@ -61,6 +69,7 @@ public class Turtle extends Chew {
     	{
     		super.makeSound();
     		super.setWeight(newweight+this.getweight());
+    		super.setEatCount();
     		return true;
     		
     	}

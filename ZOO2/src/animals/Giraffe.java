@@ -46,6 +46,14 @@ public class Giraffe extends Chew {
 		setNeckLength(1.5);
 		MessageUtility.logConstractor("Giraffe", name);
 	}
+	
+	public Giraffe(int size,String col,int horSpeed,int verSpeed)
+	{
+		super(gstartpoint,size,col,horSpeed,verSpeed);
+		super.setDiet(giraffediet);
+		super.setWeight(450.0);
+		
+	}
 	/**
 	 * @return food type
 	 */
@@ -64,6 +72,7 @@ public class Giraffe extends Chew {
     	{
     		super.makeSound();
     		super.setWeight(newweight+this.getweight());
+    		super.setEatCount();
     		return true;
     		
     	}

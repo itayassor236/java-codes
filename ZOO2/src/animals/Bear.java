@@ -41,6 +41,14 @@ public class Bear extends Roar {
 		setFurColor("GRAY");
 		MessageUtility.logConstractor("Bear", name);
 	}
+	
+	public Bear(int size,String col,int horSpeed,int verSpeed)
+	{
+		super(startlocation,size,col,horSpeed,verSpeed);
+		super.setDiet(beardiet);
+		super.setWeight(308.2);
+		
+	}
 	/**
 	 * @return food type
 	 */
@@ -59,6 +67,7 @@ public class Bear extends Roar {
     	{
     		super.makeSound();
     		super.setWeight(newweight+this.getweight());
+    		super.setEatCount();
     		return true;
     		
     	}

@@ -42,6 +42,14 @@ public class Elephant extends Chew {
 		setTrunkLength(1.0);
 		MessageUtility.logConstractor("Elephant", name);
 	}
+	
+	public Elephant(int size,String col,int horSpeed,int verSpeed)
+	{
+		super(estartpoint,size,col,horSpeed,verSpeed);
+		super.setDiet(elephantdiet);
+		super.setWeight(500.0);
+		
+	}
 	/**
 	 * @return food type
 	 */
@@ -60,6 +68,7 @@ public class Elephant extends Chew {
     	{
     		super.makeSound();
     		super.setWeight(newweight+this.getweight());
+    		super.setEatCount();
     		return true;
     		
     	}

@@ -42,6 +42,14 @@ public class Lion extends Roar {
 		this.scarCount=0;
 		MessageUtility.logConstractor("Lion", name);
 	}
+	
+	public Lion(int size,String col,int horSpeed,int verSpeed)
+	{
+		super(startlocation,size,col,horSpeed,verSpeed);
+		super.setDiet(liondiet);
+		super.setWeight(408.2);
+		
+	}
 	/**
 	 * @return foot type
 	 */
@@ -62,6 +70,7 @@ public class Lion extends Roar {
     		this.scarCount=scars.nextInt(scarCount,scarCount+1);
     		super.makeSound();
     		super.setWeight(newweight+this.getweight());
+    		super.setEatCount();
     		return true;
     		
     	}

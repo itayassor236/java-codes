@@ -1,18 +1,17 @@
 package plants;
+import mobility.*;
 
 import java.util.Random;
-
+import graphics.IDrawable;
 import food.EFoodType;
 import food.IEdible;
-import mobility.ILocatable;
-import mobility.Point;
 import utilities.MessageUtility;
 
 /**
  * 07 April 2022
  * @author ItayAsor
  */
-public abstract class Plant implements IEdible, ILocatable {
+public abstract class Plant implements IEdible, Ilocatable,IDrawable {
 
 	private double height;
 

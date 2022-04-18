@@ -3,6 +3,9 @@ import mobility.*;
 import food.*;
 import diet.IDiet;
 import utilities.MessageUtility;
+import graphics.IAnimalBehavior;
+import graphics.IDrawable;
+import graphics.ZooPanel;
 
 /**
  * An abstract class of all animals
@@ -10,10 +13,22 @@ import utilities.MessageUtility;
  * @author Bar_Mor
  *@see Roar
  */
-public abstract class Animal extends Mobile implements IEdible{
+public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimalBehavior{
 	private String name;
 	private double weight;
 	private IDiet diet;
+	private final int EAT_DISTANCE = 10;
+	private int size;
+	private String col;
+	private int horSpeed;
+	private int verSpeed;
+	private boolean colordChanged;
+	private Thread thread;
+	private int x_dir;
+	private int y_dir;
+	private int eatCount;
+	private ZooPanel pan;
+	private BufferedImage img1, img2;
 /**
  * 
  * @param name_
@@ -23,7 +38,21 @@ public abstract class Animal extends Mobile implements IEdible{
 	{
 		super(location_);
 		setName(name_);
+		this.colordChanged=false;
+		this.eatCount=0;
 		MessageUtility.logConstractor("Animal", name_);
+	}
+
+	public Animal(Point point,int size,String col,int horSpeed,int verSpeed)
+	{
+		super(point);
+		setName(" ");
+		this.colordChanged=false;
+		this.eatCount=0;
+		this.size=size;
+		this.col=col;
+		this.horSpeed=horSpeed;
+		this.verSpeed=verSpeed;
 	}
 	/**
 	 * 
@@ -120,6 +149,33 @@ public abstract class Animal extends Mobile implements IEdible{
 	}
 
 	public abstract String toString();
+	
+	public int getEatCount()
+	{
+		return this.eatCount;
+	}
+	
+	public void setEatCount()
+	{
+	this.eatCount+=1;
+	}
+	
+	public boolean getChanges ()
+	{
+		return this.colordChanged;
+	}
+	public void setChanges (boolean state)
+	{
+		if(state)
+		{
+			this.colordChanged=true;
+		}
+		
+	}
+	
+	
+	
+	
 }
 
 
