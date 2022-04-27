@@ -172,7 +172,18 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 		}
 		
 	}
-	
+	public String getAnimalName()
+	{
+		return this.name;
+	}
+	public int getSize()
+	{
+		return this.size;
+	}
+	public void eatInc()
+	{
+		this.eatCount++;
+	}
 	
 	
 	
