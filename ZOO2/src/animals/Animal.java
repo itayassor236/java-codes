@@ -1,6 +1,9 @@
 package animals;
 import mobility.*;
 import food.*;
+
+import java.awt.image.BufferedImage;
+
 import diet.IDiet;
 import utilities.MessageUtility;
 import graphics.IAnimalBehavior;
@@ -22,7 +25,7 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	private String col;
 	private int horSpeed;
 	private int verSpeed;
-	private boolean colordChanged;
+	private boolean coordChanged;
 	private Thread thread;
 	private int x_dir;
 	private int y_dir;
@@ -38,7 +41,7 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	{
 		super(location_);
 		setName(name_);
-		this.colordChanged=false;
+		this.coordChanged=false;
 		this.eatCount=0;
 		MessageUtility.logConstractor("Animal", name_);
 	}
@@ -47,7 +50,7 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	{
 		super(point);
 		setName(" ");
-		this.colordChanged=false;
+		this.coordChanged=false;
 		this.eatCount=0;
 		this.size=size;
 		this.col=col;
@@ -162,13 +165,13 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	
 	public boolean getChanges ()
 	{
-		return this.colordChanged;
+		return this.coordChanged;
 	}
 	public void setChanges (boolean state)
 	{
 		if(state)
 		{
-			this.colordChanged=true;
+			this.coordChanged=true;
 		}
 		
 	}
@@ -179,6 +182,10 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	public int getSize()
 	{
 		return this.size;
+	}
+	public void setSize(int snum)
+	{
+		this.size=snum;
 	}
 	public void eatInc()
 	{
