@@ -154,6 +154,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    		
 			    		 
 			    	 }
@@ -165,6 +166,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    		 
 			    		 
 			    	 }
@@ -176,6 +178,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    		 
 			    	 }
 			    	 if(animaltype==4)
@@ -186,10 +189,11 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    		 
 			    		 
 			    	 }
-			    	 if(animaltype==2)
+			    	 if(animaltype==5)
 			    	 {
 			    		 tc++;
 			    		 name="Turtle"+tc;
@@ -197,6 +201,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    		 
 			    	 }
 			    	 

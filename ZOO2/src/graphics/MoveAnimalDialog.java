@@ -40,7 +40,7 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 		this.Z=Z;
 		int size2=Z.getArraysize();
 		animals=new String[Z.getArraysize()];
-		for(int i=0;i<Z.getArraysize()-1;i++)
+		for(int i=0;i<Z.getArraysize();i++)
 		{
 			animals[i]=(String) Z.getListofanimals().get(i);
 		}
