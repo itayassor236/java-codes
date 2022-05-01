@@ -26,14 +26,14 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 	private JLabel l3;
 	private JLabel l4;
 	private JLabel l5;
-	private int animaltype=0,hspeed=0,vspeed=0,size1;
+	private int animaltype=0,hspeed=0,vspeed=0,size1,lc=0,bc=0,ec=0,gc=0,tc=0;
 	private JComboBox cbox;
 	private JComboBox abox;
 	private JComboBox hspeedbox;
 	private JComboBox vspeedbox;
 	private JButton create;
 	private JTextField size;
-	private String animalcolor=" ";
+	private String animalcolor=" ",name;
 	private String colors[]={"Natural","Red","Blue"};
 	private String animals[]= {"Lion","Bear","Elephant","Giraffe","Turtle"};
 	private String intnums[]= {"1","2","3","4","5","6","7","8","9","10"};
@@ -147,38 +147,56 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			     else
 			     {
 			    	 if(animaltype==1)
-			    	 {
+			    	 { 
+			    		 lc++;
+			    		 name="Lion"+lc;
 			    		 newanimal=new Lion(size1,animalcolor,hspeed,vspeed);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
+			    		 zPanel.setListofanimals(name);
+			    		
 			    		 
 			    	 }
 			    	 if(animaltype==2)
 			    	 {
+			    		 bc++;
+			    		 name="Bear"+bc;
 			    		 newanimal=new Bear(size1,animalcolor,hspeed,vspeed);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
+			    		 zPanel.setListofanimals(name);
+			    		 
 			    		 
 			    	 }
 			    	 if(animaltype==3)
 			    	 {
+			    		 ec++;
+			    		 name="Elephant"+ec;
 			    		 newanimal=new Elephant(size1,animalcolor,hspeed,vspeed);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
+			    		 zPanel.setListofanimals(name);
 			    		 
 			    	 }
 			    	 if(animaltype==4)
 			    	 {
+			    		 gc++;
+			    		 name="Giraffe"+gc;
 			    		 newanimal=new Giraffe(size1,animalcolor,hspeed,vspeed);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
+			    		 zPanel.setListofanimals(name);
+			    		 
 			    		 
 			    	 }
 			    	 if(animaltype==2)
 			    	 {
+			    		 tc++;
+			    		 name="Turtle"+tc;
 			    		 newanimal=new Turtle(size1,animalcolor,hspeed,vspeed);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
+			    		 zPanel.setListofanimals(name);
 			    		 
 			    	 }
 			    	 

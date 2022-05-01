@@ -51,7 +51,7 @@ public class Giraffe extends Chew {
 	{
 		super(gstartpoint,size,col,horSpeed,verSpeed);
 		super.setDiet(giraffediet);
-		super.setWeight(450.0);
+		super.setWeight(size*2.2);
 		
 	}
 	/**

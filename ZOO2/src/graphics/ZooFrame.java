@@ -173,7 +173,15 @@ public void actionPerformed(ActionEvent e)
 		}
 		if(e.getSource()==move_animal)
 		{
-			MoveAnimalDialog mad=new MoveAnimalDialog();
+			MoveAnimalDialog mad=new MoveAnimalDialog(zp);
+		}
+		if(e.getSource()==clear)
+		{
+			zp.clearList();
+		}
+		if(e.getSource()==food)
+		{
+			
 		}
 	}
 	

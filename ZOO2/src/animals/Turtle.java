@@ -48,7 +48,7 @@ public class Turtle extends Chew {
 	{
 		super(tstartpoint,size,col,horSpeed,verSpeed);
 		super.setDiet(turtlediet);
-		super.setWeight(1.0);
+		super.setWeight(size*0.5);
 		
 	}
 	/**

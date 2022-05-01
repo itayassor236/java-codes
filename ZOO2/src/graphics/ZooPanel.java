@@ -34,6 +34,7 @@ public class ZooPanel extends JPanel implements ActionListener{
 	private Image pic;
 	static ArrayList<Animal> animalist=new ArrayList<Animal>();
 	private int arraysize=0;
+	private ArrayList<String> listofanimals= new ArrayList<String>();
 	
 	public ZooPanel()
 	{
@@ -136,6 +137,12 @@ public class ZooPanel extends JPanel implements ActionListener{
 	{
 		return this.arraysize;
 	}
+	public void clearList()
+	{
+			animalist.clear();
+			arraysize=0;
+		
+	}
 //	public void setBackground(int num)
 //	{
 //		setBackground(null);
@@ -149,5 +156,11 @@ public class ZooPanel extends JPanel implements ActionListener{
 //			setBackground(Color.GREEN);
 //		}
 //	}
+	public ArrayList getListofanimals() {
+		return listofanimals;
+	}
+	public void setListofanimals(String name) {
+		this.listofanimals.add(name);
+	}
 	
 }

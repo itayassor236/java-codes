@@ -47,7 +47,7 @@ public class Elephant extends Chew {
 	{
 		super(estartpoint,size,col,horSpeed,verSpeed);
 		super.setDiet(elephantdiet);
-		super.setWeight(500.0);
+		super.setWeight(size*10);
 		
 	}
 	/**
