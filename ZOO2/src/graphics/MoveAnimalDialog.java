@@ -46,7 +46,7 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 		}
 		All=new JComboBox(animals);
 		this.setLayout(new GridLayout(4,1));
-		this.setSize(400,150);
+		this.setSize(400,200);
 		this.setTitle("Move Animal");
 		
 
