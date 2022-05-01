@@ -59,22 +59,44 @@ public class ZooPanel extends JPanel implements ActionListener{
 //		this.add(info);
 //		this.add(exit);
 //		this.setLayout(new BorderLayout());
-//		this.setVisible(true);
+		this.setVisible(true);
 //	}
 //	public ZooPanel()
 //	{
 //		pic=new ImageIcon("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg").getImage();
 //	    this.setPreferredSize(new Dimension(800,600));
-//	}
-//	public void paintComponent(Graphics g) {
-//	
-//		 Graphics2D g2d=(Graphics2D) g;
-//
-//		 if(pic!=null)
-//		 {
-//		   g2d.drawImage(pic,0,0,getWidth(),getHeight(), this);
-//		 }
-//	}
+	}
+	public void paintComponent(Graphics g) {
+		
+		super.paintComponent(g);
+	    Graphics2D g2d = (Graphics2D) g;
+
+		 if(pic!=null)
+		 {
+		   g2d.drawImage(pic,0,0,getWidth(),getHeight(), this);
+		 }
+	}
+	public void setBackground1(int num)
+	{
+		if(num==0)
+		{ 
+			 setBackground(null);
+			 try { pic = ImageIO.read(new File("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg")); }
+	    	 catch (IOException ie) { System.out.println("Cannot load image"); }
+			 this.paintComponent(getGraphics());
+		}
+		if(num==1)
+		{
+			this.setBackground(null);
+			//this.paintComponent(this.getGraphics());
+			this.setBackground(Color.green);
+			
+		}
+		if(num==2)
+		{
+			setBackground(null);
+		}
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

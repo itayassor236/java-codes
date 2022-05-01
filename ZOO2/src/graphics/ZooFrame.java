@@ -48,8 +48,8 @@ public class ZooFrame extends JFrame implements ActionListener{
     //this.setLocationRelativeTo(null);
 	label=new JLabel();
 	p=new JPanel();
-	
-
+	zp=new ZooPanel();
+    this.add(zp);
 	p.setLayout(new FlowLayout());
 	add_animal=new JButton("Add Animal");
 	p.add(add_animal);
@@ -121,24 +121,30 @@ public void actionPerformed(ActionEvent e)
 	    if(e.getSource()==image)
 	    {
 	    	
-//	    	 try { pic = ImageIO.read(new File("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg")); }
-//	    	 catch (IOException ie) { System.out.println("Cannot load image"); }
-//	    	label=new JLabel(new ImageIcon("savanna.jpg"));
-//	    	label.setBounds(0, 0, 800, 600);
-//	    	this.add(zp);
-	    	label=new JLabel(new ImageIcon("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg"));
+	    	 try { pic = ImageIO.read(new File("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg")); }
+	    	 catch (IOException ie) { System.out.println("Cannot load image"); }
+	    	label=new JLabel(new ImageIcon("savanna.jpg"));
+    	label.setBounds(0, 0, 800, 600);
+	    	this.add(zp);
+    	label=new JLabel(new ImageIcon("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg"));
 	    	this.add(label);
+//	    	zp.setBackground1(0);
+//	    	zp.setVisible(true);
 	  
 	    }
 		if(e.getSource()==green)
 		{
 			this.remove(label);
 			this.getContentPane().setBackground(Color.green);
+//			zp.setBackground1(1);
+//	    	zp.setVisible(true);
 		}
 		if(e.getSource()==none)
 		{
 			this.remove(label);
 			this.getContentPane().setBackground(null);
+//			zp.setBackground1(2);
+//	    	zp.setVisible(true);
 		}
 		if(e.getSource()==help1)
 		{
@@ -161,11 +167,16 @@ public void actionPerformed(ActionEvent e)
 			    }
 			});
 		}
+		if(e.getSource()==add_animal)
+		{
+			AddAnimalDialog aad=new AddAnimalDialog(zp,this);
+		}
 	}
 	
-	public static void main(String args[])
+	public static void main(String[] args)
 	{
 		ZooFrame zf=new ZooFrame();
+		//new ZooFrame();
 	}
 
 	
