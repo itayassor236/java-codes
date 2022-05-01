@@ -48,6 +48,8 @@ public class Bear extends Roar {
 		super.setDiet(beardiet);
 		super.setWeight(size*1.5);
 		
+		
+		
 	}
 	/**
 	 * @return food type
