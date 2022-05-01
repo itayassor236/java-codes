@@ -47,7 +47,7 @@ public class Lion extends Roar {
 	{
 		super(startlocation,size,col,horSpeed,verSpeed);
 		super.setDiet(liondiet);
-		super.setWeight(408.2);
+		super.setWeight(size*0.8);
 		
 	}
 	/**
