@@ -68,17 +68,7 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 //				animals[i]=Obj.getClass().getSimpleName()+Elephants;
 //				Elephants++;
 //			}
-//			if(Obj instanceof Giraffe)
-//			{
-//				animals[i]=Obj.getClass().getSimpleName()+Giraffes;
-//				Giraffes++;
-//			}
-//			if(Obj instanceof Turtle)
-//			{
-//				animals[i]=Obj.getClass().getSimpleName()+Turtles;
-//				Turtles++;
-//			}
-//		}
+
 		JLabel labelAnimal=new JLabel("select animal");
 		this.add(labelAnimal);
 		All.addActionListener(this);
