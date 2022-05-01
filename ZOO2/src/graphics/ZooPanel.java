@@ -12,11 +12,14 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import animals.Animal;
 
 public class ZooPanel extends JPanel implements ActionListener{
 
@@ -28,6 +31,7 @@ public class ZooPanel extends JPanel implements ActionListener{
 	private JButton exit;
 	private JPanel jp;
 	private Image pic;
+	static ArrayList<Animal> array=new ArrayList<Animal>();
 	
 	public ZooPanel()
 	{
