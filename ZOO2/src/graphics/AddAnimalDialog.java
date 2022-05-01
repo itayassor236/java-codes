@@ -14,7 +14,10 @@ import javax.swing.JTextField;
 
 import animals.Animal;
 import animals.Bear;
+import animals.Elephant;
+import animals.Giraffe;
 import animals.Lion;
+import animals.Turtle;
 
 public class AddAnimalDialog extends JDialog implements ActionListener{
 	private JPanel panel;
@@ -146,11 +149,36 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    	 if(animaltype==1)
 			    	 {
 			    		 newanimal=new Lion(size1,animalcolor,hspeed,vspeed);
+			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
+			    		 zPanel.animalist.add(newanimal);
 			    		 
 			    	 }
 			    	 if(animaltype==2)
 			    	 {
 			    		 newanimal=new Bear(size1,animalcolor,hspeed,vspeed);
+			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
+			    		 zPanel.animalist.add(newanimal);
+			    		 
+			    	 }
+			    	 if(animaltype==3)
+			    	 {
+			    		 newanimal=new Elephant(size1,animalcolor,hspeed,vspeed);
+			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
+			    		 zPanel.animalist.add(newanimal);
+			    		 
+			    	 }
+			    	 if(animaltype==4)
+			    	 {
+			    		 newanimal=new Giraffe(size1,animalcolor,hspeed,vspeed);
+			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
+			    		 zPanel.animalist.add(newanimal);
+			    		 
+			    	 }
+			    	 if(animaltype==2)
+			    	 {
+			    		 newanimal=new Turtle(size1,animalcolor,hspeed,vspeed);
+			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
+			    		 zPanel.animalist.add(newanimal);
 			    		 
 			    	 }
 			    	 

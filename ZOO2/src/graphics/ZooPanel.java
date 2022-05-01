@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import animals.Animal;
@@ -31,7 +32,8 @@ public class ZooPanel extends JPanel implements ActionListener{
 	private JButton exit;
 	private JPanel jp;
 	private Image pic;
-	static ArrayList<Animal> array=new ArrayList<Animal>();
+	static ArrayList<Animal> animalist=new ArrayList<Animal>();
+	private int arraysize=0;
 	
 	public ZooPanel()
 	{
@@ -107,7 +109,33 @@ public class ZooPanel extends JPanel implements ActionListener{
 		// TODO Auto-generated method stub
 		
 	}
+	public void setArraySize(int num)
+	{
+		try
+		{
+			
+		
+		  if(num>0&&num<11)
+		  {
+			this.arraysize=num;
+		  }
+		  else
+		  {
+		    throw new ArrayIndexOutOfBoundsException();
+		  }
+		}
+		
+			catch(ArrayIndexOutOfBoundsException error) {
+				
+				JOptionPane.showMessageDialog(null, "number not in range !!"); 
+			}
+		
+	}
 	
+	public int getArraysize()
+	{
+		return this.arraysize;
+	}
 //	public void setBackground(int num)
 //	{
 //		setBackground(null);
