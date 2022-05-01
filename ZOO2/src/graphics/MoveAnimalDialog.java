@@ -49,25 +49,6 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 		this.setSize(400,150);
 		this.setTitle("Move Animal");
 		
-//		Object Obj;
-//		for(int i=0;i<Z.getArraysize();i++)
-//		{
-//			Obj = ZooPanel.animalist.get(i);
-//			if(Obj instanceof Lion)
-//			{
-//				animals[i]=Obj.getClass().getSimpleName()+Lions;
-//				Lions++;
-//			}
-//			if(Obj instanceof Bear)
-//			{
-//				animals[i]=Obj.getClass().getSimpleName()+Bears;
-//				Bears++;
-//			}
-//			if(Obj instanceof Elephant)
-//			{
-//				animals[i]=Obj.getClass().getSimpleName()+Elephants;
-//				Elephants++;
-//			}
 
 		JLabel labelAnimal=new JLabel("select animal");
 		this.add(labelAnimal);
@@ -127,10 +108,6 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 						JOptionPane.showMessageDialog(null, "Animal didnt moved");
 					}
 				    
-				
-						
-						
-					
 				
 					
 					
