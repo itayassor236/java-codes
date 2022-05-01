@@ -169,7 +169,7 @@ public void actionPerformed(ActionEvent e)
 		}
 		if(e.getSource()==add_animal)
 		{
-			AddAnimalDialog aad=new AddAnimalDialog(zp,this);
+			AddAnimalDialog aad=new AddAnimalDialog(zp);
 		}
 	}
 	
