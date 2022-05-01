@@ -46,7 +46,7 @@ public class Bear extends Roar {
 	{
 		super(startlocation,size,col,horSpeed,verSpeed);
 		super.setDiet(beardiet);
-		super.setWeight(308.2);
+		super.setWeight(size*1.5);
 		
 	}
 	/**

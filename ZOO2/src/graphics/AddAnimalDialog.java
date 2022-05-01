@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import animals.Animal;
+import animals.Bear;
 import animals.Lion;
 
 public class AddAnimalDialog extends JDialog implements ActionListener{
@@ -145,6 +146,11 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    	 if(animaltype==1)
 			    	 {
 			    		 newanimal=new Lion(size1,animalcolor,hspeed,vspeed);
+			    		 
+			    	 }
+			    	 if(animaltype==2)
+			    	 {
+			    		 newanimal=new Bear(size1,animalcolor,hspeed,vspeed);
 			    		 
 			    	 }
 			     }
