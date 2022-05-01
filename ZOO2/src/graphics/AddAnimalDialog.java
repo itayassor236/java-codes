@@ -153,6 +153,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 newanimal=new Bear(size1,animalcolor,hspeed,vspeed);
 			    		 
 			    	 }
+			    	 
 			     }
 			}
 		}

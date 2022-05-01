@@ -171,6 +171,10 @@ public void actionPerformed(ActionEvent e)
 		{
 			AddAnimalDialog aad=new AddAnimalDialog(zp);
 		}
+		if(e.getSource()==move_animal)
+		{
+			MoveAnimalDialog mad=new MoveAnimalDialog();
+		}
 	}
 	
 	public static void main(String[] args)
