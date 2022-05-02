@@ -75,6 +75,14 @@ public abstract class Mobile implements Ilocatable{
 	{
 		return this.totalDistance;
 	}
+	public int getxlocation()
+	{
+		return location.getx();
+	}
+	public int getylocation()
+	{
+		return location.gety();
+	}
 
 	
 	

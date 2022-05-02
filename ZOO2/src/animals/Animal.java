@@ -27,8 +27,8 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	private int verSpeed;
 	private boolean coordChanged;
 	private Thread thread;
-	private int x_dir;
-	private int y_dir;
+	private int x_dir=1;
+	private int y_dir=1;
 	private int eatCount;
 	private ZooPanel pan;
 	private BufferedImage img1, img2;
@@ -192,6 +192,18 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 		this.eatCount++;
 	}
 	
+	public String getColor()
+	{
+		return this.col;
+	}
+	public int gethspeed()
+	{
+		return horSpeed;
+	}
+	public int getvspeed()
+	{
+		return verSpeed;
+	}
 	
 	
 }

@@ -30,73 +30,82 @@ public class ZooPanel extends JPanel implements ActionListener{
 	private JButton food;
 	private JButton info;
 	private JButton exit;
-	private JPanel jp;
-	private Image pic;
+	private JPanel p;
+	private BufferedImage pic=null;
 	static ArrayList<Animal> animalist=new ArrayList<Animal>();
 	private int arraysize=0;
 	private ArrayList<String> listofanimals= new ArrayList<String>();
+	private Graphics g1=null;
+	private boolean back=false;
 	
 	public ZooPanel()
 	{
-		
-		
+		this.setBackground(null);
+		this.setVisible(true);
+		 try { pic = ImageIO.read(new File("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg")); }
+    	 catch (IOException ie) { System.out.println("Cannot load image"); }
+		 
+		//g1=this.getComponentGraphics(g1)
+//		p=new JPanel(new FlowLayout());
 //		this.setLayout(new BorderLayout());
 //		add_animal=new JButton("Add Animal");
+//		p.add(add_animal);
 //		add_animal.addActionListener(this);
 //		move_animal=new JButton("Move Animal");
+//		p.add(move_animal);
 //		move_animal.addActionListener(this);
 //		clear=new JButton("Clear");
+//		p.add(clear);
 //		clear.addActionListener(this);
 //		food=new JButton("Food");
+//		p.add(food);
 //		food.addActionListener(this);
 //		info=new JButton("Info");
+//		p.add(info);
 //		info.addActionListener(this);
 //		exit=new JButton("Exit");
+//		p.add(exit);
 //		exit.addActionListener(this);
-//		//add_animal.setFocusable(false);
-//		//move_animal.setFocusable(false);
-////		clear.setFocusable(false);
-////		food.setFocusable(false);
-////		info.setFocusable(false);
-////		exit.setFocusable(false);
-//		this.add(add_animal);
-//		this.add(move_animal);
-//		this.add(clear);
-//		this.add(food);
-//		this.add(info);
-//		this.add(exit);
+//		add_animal.setFocusable(false);
+//		move_animal.setFocusable(false);
+//		clear.setFocusable(false);
+//		food.setFocusable(false);
+//		info.setFocusable(false);
+//		exit.setFocusable(false);
 //		this.setLayout(new BorderLayout());
-		this.setVisible(true);
-//	}
+//		this.add(p,BorderLayout.SOUTH);
+//		this.setVisible(true);
+	}
 //	public ZooPanel()
 //	{
 //		pic=new ImageIcon("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg").getImage();
 //	    this.setPreferredSize(new Dimension(800,600));
-	}
+	
 	public void paintComponent(Graphics g) {
 		
 		super.paintComponent(g);
-	    Graphics2D g2d = (Graphics2D) g;
-
-		 if(pic!=null)
-		 {
-		   g2d.drawImage(pic,0,0,getWidth(),getHeight(), this);
-		 }
+	    Graphics2D gr = (Graphics2D) g;
+	   if(back)
+	   {
+	      gr.drawImage(pic,0,0,getWidth(),getHeight(), this);
+	   }
+	     
 	}
 	public void setBackground1(int num)
 	{
 		if(num==0)
 		{ 
 			 setBackground(null);
-			 try { pic = ImageIO.read(new File("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg")); }
-	    	 catch (IOException ie) { System.out.println("Cannot load image"); }
-			 this.paintComponent(getGraphics());
+//			 try { pic = ImageIO.read(new File("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg")); }
+//	    	 catch (IOException ie) { System.out.println("Cannot load image"); }
+			 back=true;
+			 this.paintComponent(this.getGraphics());
 		}
 		if(num==1)
 		{
 			this.setBackground(null);
-			//this.paintComponent(this.getGraphics());
-			this.setBackground(Color.green);
+			this.paintComponent(getGraphics());
+			this.setBackground(Color.GREEN);
 			
 		}
 		if(num==2)
@@ -107,7 +116,22 @@ public class ZooPanel extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+//		if(e.getSource()==add_animal)
+//		{
+//			AddAnimalDialog aad=new AddAnimalDialog(this);
+//		}
+//		if(e.getSource()==move_animal)
+//		{
+//			MoveAnimalDialog mad=new MoveAnimalDialog(this);
+//		}
+//		if(e.getSource()==clear)
+//		{
+//			this.clearList();
+//		}
+//		if(e.getSource()==food)
+//		{
+//			
+//		}
 		
 	}
 	public void setArraySize(int num)
@@ -161,6 +185,21 @@ public class ZooPanel extends JPanel implements ActionListener{
 	}
 	public void setListofanimals(String name) {
 		this.listofanimals.add(name);
+	}
+	public void setFood(int pick)
+	{
+		if(pick==0)
+		{
+			
+		}
+		if(pick==1)
+		{
+			
+		}
+		if(pick==2)
+		{
+			
+		}
 	}
 	
 }

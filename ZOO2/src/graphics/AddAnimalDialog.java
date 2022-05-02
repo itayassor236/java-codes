@@ -26,7 +26,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 	private JLabel l3;
 	private JLabel l4;
 	private JLabel l5;
-	private int animaltype=0,hspeed=0,vspeed=0,size1,lc=0,bc=0,ec=0,gc=0,tc=0;
+	private int animaltype=0,hspeed=0,vspeed=0,size1,lc=0,bc=0,ec=0,gc=0,tc=0,i=0;
 	private JComboBox cbox;
 	private JComboBox abox;
 	private JComboBox hspeedbox;
@@ -54,7 +54,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 		l1=new JLabel("Pick an animal :");
 		l2=new JLabel("Pick Horizontal speed :");
 		l3=new JLabel("Pick Vetical speed :");
-		l4=new JLabel("Enter size of animal between 50-300");
+		l4=new JLabel("Enter size from 50 to 300");
 		l5=new JLabel("Pick animal color");
 		this.add(l1);
 		this.add(abox);
@@ -167,6 +167,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
 			    		 JOptionPane.showMessageDialog(null, "Animal added");
+			    	     
 			    		 
 			    		 
 			    	 }

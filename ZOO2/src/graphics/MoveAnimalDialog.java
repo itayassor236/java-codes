@@ -90,29 +90,30 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 				y=Integer.parseInt(Y.getText());
 			}
 
-
-			Type=(String)All.getSelectedItem();
-			for(int i=0;i<Z.getArraysize();i++)
+			else
 			{
+			 Type=(String)All.getSelectedItem();
+			 for(int i=0;i<Z.getArraysize();i++)
+			 {
 				
-				if(animals[i].equals(Type))
-				{
-					p=new Point(x,y);
-					if(Z.animalist.get(i).move(p)>0)
-					  {
-						Z.animalist.get(i).setChanges(true);
-					    JOptionPane.showMessageDialog(null, "Animal moved");
-					  }
-					else
-					{
+				 if(animals[i].equals(Type))
+				 {
+					 p=new Point(x,y);
+					 if(Z.animalist.get(i).move(p)>0)
+					   {
+						 Z.animalist.get(i).setChanges(true);
+					     JOptionPane.showMessageDialog(null, "Animal moved");
+					   }
+					 else
+					   {
 						JOptionPane.showMessageDialog(null, "Animal didnt moved");
-					}
+					   }
 				    
-				
+				 }
 					
 					
-				}
 			}
+		   }
 		}
 		
 	}
