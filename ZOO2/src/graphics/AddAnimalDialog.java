@@ -151,6 +151,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 lc++;
 			    		 name="Lion"+lc;
 			    		 newanimal=new Lion(size1,animalcolor,hspeed,vspeed);
+			    		 newanimal.setName(name);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
@@ -163,6 +164,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 bc++;
 			    		 name="Bear"+bc;
 			    		 newanimal=new Bear(size1,animalcolor,hspeed,vspeed);
+			    		 newanimal.setName(name);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
@@ -176,6 +178,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 ec++;
 			    		 name="Elephant"+ec;
 			    		 newanimal=new Elephant(size1,animalcolor,hspeed,vspeed);
+			    		 newanimal.setName(name);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
@@ -187,6 +190,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 gc++;
 			    		 name="Giraffe"+gc;
 			    		 newanimal=new Giraffe(size1,animalcolor,hspeed,vspeed);
+			    		 newanimal.setName(name);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
@@ -199,6 +203,7 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 tc++;
 			    		 name="Turtle"+tc;
 			    		 newanimal=new Turtle(size1,animalcolor,hspeed,vspeed);
+			    		 newanimal.setName(name);
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);

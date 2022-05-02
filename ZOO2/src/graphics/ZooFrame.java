@@ -106,6 +106,7 @@ public class ZooFrame extends JFrame implements ActionListener{
 	none.addActionListener(this);
 	help1.addActionListener(this);
 //	this.add(p,BorderLayout.SOUTH);
+	this.add(zp);
 	this.setSize(800,600);
 	this.setVisible(true);
 	}

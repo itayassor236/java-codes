@@ -2,6 +2,7 @@ package animals;
 import mobility.*;
 import food.*;
 
+import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import diet.IDiet;
@@ -204,7 +205,99 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	{
 		return verSpeed;
 	}
-	
+	public void drawObject(Graphics g)
+	{
+		if(this.x_dir==1) 
+		 {
+			 g.drawImage(img1, this.getxlocation()-this.size/2, this.getylocation()-this.size/10, this.size/2, this.size, this.pan);
+		 }
+		
+		 else 
+		 {
+			 g.drawImage(img2, this.getxlocation(), this.getylocation()-this.size/10, this.size/2, this.size, this.pan);
+		 }
+
+	}
+	public void loadImages(String nm)
+	{
+		if(nm=="lio")
+		{
+			if(col=="Blue")
+			{
+				img1=new ImageIo.read(new File(PICTURE_PATH+"lio_b_1.png"));
+
+			}
+			else if(col=="Red")
+			{
+				img1=new ImageIo.read(new File(PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+			else
+			{
+				img1=new ImageIo.read(new File(PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+			
+		}
+		if(nm=="bea")
+		{
+			if(col=="Blue")
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+			else if(col=="Red")
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+			else
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+		}
+		if(nm=="elf")
+		{
+			if(col=="Blue")
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+			else if(col=="Red")
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+			else
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+		}
+		if(nm=="grf")
+		{
+			if(col=="Blue")
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
+			}
+			else if(col=="Red")
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))	
+			}
+			else
+			{
+				
+			}
+		}
+		if(nm=="trt")
+		{
+			if(col=="Blue")
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH+nm="_"+"b_1.png"))
+			}
+			else if(col=="Red")
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH+nm="_"+"b_1.png"))
+			}
+			else
+			{
+				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH+nm="_"+"b_1.png"))
+			}
+		}
+	}
 	
 }
 

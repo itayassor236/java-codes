@@ -41,23 +41,23 @@ public class AnimalsTable extends AbstractTableModel{
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		
 		// TODO Auto-generated method stub
-		if(rowIndex>getRowCount())
+		//if(rowIndex>getRowCount())
 		{
-			Animal adata=data.get(columnIndex);
+			Animal adata=data.get(rowIndex);
 		
-		  switch(rowIndex)
+		  switch(columnIndex)
 		   {
-		  case 1:
+		  case 0:
 			  return adata.getName();	
-		  case 2:
+		  case 1:
 			  return adata.getColor();
-		  case 3:
+		  case 2:
 			  return adata.getweight();
-		  case 4:
+		  case 3:
 			  return adata.gethspeed();
-		  case 5:
+		  case 4:
 			  return adata.getvspeed();
-		  case 6:
+		  case 5:
 			  return adata.getEatCount();
 		   }
 		}

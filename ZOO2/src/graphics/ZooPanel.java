@@ -84,11 +84,12 @@ public class ZooPanel extends JPanel implements ActionListener{
 	public void paintComponent(Graphics g) {
 		
 		super.paintComponent(g);
-	    Graphics2D gr = (Graphics2D) g;
+	    //Graphics2D gr = (Graphics2D) g;
 	   if(back)
 	   {
-	      gr.drawImage(pic,0,0,getWidth(),getHeight(), this);
+	      g.drawImage(pic,0,0,getWidth(),getHeight(), this);
 	   }
+	   back=false;
 	     
 	}
 	public void setBackground1(int num)
@@ -99,18 +100,20 @@ public class ZooPanel extends JPanel implements ActionListener{
 //			 try { pic = ImageIO.read(new File("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg")); }
 //	    	 catch (IOException ie) { System.out.println("Cannot load image"); }
 			 back=true;
-			 this.paintComponent(this.getGraphics());
+			 this.repaint();
 		}
 		if(num==1)
 		{
 			this.setBackground(null);
-			this.paintComponent(getGraphics());
-			this.setBackground(Color.GREEN);
+			this.setBackground(Color.green);
+			
+			
+			
 			
 		}
 		if(num==2)
 		{
-			setBackground(null);
+			this.setBackground(null);
 		}
 	}
 
@@ -201,5 +204,8 @@ public class ZooPanel extends JPanel implements ActionListener{
 			
 		}
 	}
-	
+	public void manageZoo()
+	{
+		
+	}
 }
