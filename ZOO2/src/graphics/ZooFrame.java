@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -171,15 +172,26 @@ public void actionPerformed(ActionEvent e)
 		}
 		if(e.getSource()==add_animal)
 		{
-			AddAnimalDialog aad=new AddAnimalDialog(zp);
+			if(zp.getArraysize()>10)
+			{
+				JOptionPane.showMessageDialog(null, "Can not add animal !!"); 
+			}
+			else
+			{
+				AddAnimalDialog aad=new AddAnimalDialog(zp);
+				
+			
+			}
 		}
 		if(e.getSource()==move_animal)
 		{
 			MoveAnimalDialog mad=new MoveAnimalDialog(zp);
+			zp.manageZoo();
 		}
 		if(e.getSource()==clear)
 		{
 			zp.clearList();
+			zp.manageZoo()
 		}
 		if(e.getSource()==food)
 		{
@@ -196,8 +208,7 @@ public void actionPerformed(ActionEvent e)
 			label3.add(meat);	
 			meat.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e)
-				{  
-				
+				{
 			    }
 			});
 			JButton cabbage=new JButton("Cabbage");

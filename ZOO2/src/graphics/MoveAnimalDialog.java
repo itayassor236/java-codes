@@ -24,11 +24,12 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 {
 	 JComboBox All;
 	 JButton AnimalMove;
-	 JTextField X;
-	 JTextField Y;
-	 String Type;
+	 private JTextField x1;
+	 private JTextField y1;
+	 int Type;
 	 Animal animal;
-	 int x,y;
+	 private String x,y;
+	 private int x2,y2;
 	 Point p;
 	ZooPanel Z;
 	 String S;
@@ -55,15 +56,15 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 		All.addActionListener(this);
 		this.add(All);
 		JLabel labelX=new JLabel("enter x (0-800)");
+		x1=new JTextField();
 		this.add(labelX);
-		X=new JTextField();
-		this.add(X);
-		X.addActionListener(this);
+		this.add(x1);
+		x1.addActionListener(this);
 		JLabel labelY=new JLabel("enter y (0-600)");
+		y1=new JTextField();
 		this.add(labelY);
-		Y=new JTextField();
-		this.add(Y);
-		Y.addActionListener(this);
+		this.add(y1);
+		y1.addActionListener(this);
 		JLabel move=new JLabel("Press to move");
 		this.add(move);
 		AnimalMove=new JButton("Accept");
@@ -78,45 +79,53 @@ public class MoveAnimalDialog extends JDialog implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e)
 	{
+		if(e.getSource()==All)
+		{
+			for(int i=0;i<Z.getArraysize();i++) 
+			{
+		       if(All.getSelectedIndex()==i)
+		       {
+		    	   Type=i;
+		       }
+			}
+		}
 		
 		if (e.getSource()==AnimalMove)
 		{
-			x=Integer.parseInt(X.getText());
-			y=Integer.parseInt(Y.getText());
-			if((x<0||x>800)||(y<0||y>600))
+			x=x1.getText();
+			y=y1.getText();
+			x2=Integer.parseInt(x);
+			y2=Integer.parseInt(y);
+			while((x2<0||x2>800)||(y2<0||y2>600))
 			{
 				JOptionPane.showMessageDialog(null, "Wrong cordinates please enter again","Error",JOptionPane.WARNING_MESSAGE);
-				x=Integer.parseInt(X.getText());
-				y=Integer.parseInt(Y.getText());
+				x=x1.getText();
+				y=y1.getText();
+				x2=Integer.parseInt(x);
+				y2=Integer.parseInt(y);
 			}
 
-			else
-			{
-			 Type=(String)All.getSelectedItem();
-			 for(int i=0;i<Z.getArraysize();i++)
-			 {
-				
-				 if(animals[i].equals(Type))
-				 {
-					 p=new Point(x,y);
-					 if(Z.animalist.get(i).move(p)>0)
-					   {
-						 Z.animalist.get(i).setChanges(true);
-					     JOptionPane.showMessageDialog(null, "Animal moved");
-					   }
-					 else
-					   {
-						JOptionPane.showMessageDialog(null, "Animal didnt moved");
-					   }
-				    
-				 }
-					
-					
-			}
-		   }
-		}
 		
+	
+			 p=new Point(x2,y2);
+			if(Z.animalist.get(Type).move(p)>0)
+			 {
+				 Z.animalist.get(Type).setChanges(true);
+				 JOptionPane.showMessageDialog(null, "Animal moved");
+			 }
+			 else
+			 {
+				JOptionPane.showMessageDialog(null, "Animal didnt moved");
+			 }
+				   
+			 
+					
+					
 	}
-
-
+	}
 }
+ 
+	
+		
+
+

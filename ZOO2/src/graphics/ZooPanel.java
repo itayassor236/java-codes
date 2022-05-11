@@ -90,6 +90,8 @@ public class ZooPanel extends JPanel implements ActionListener{
 	      g.drawImage(pic,0,0,getWidth(),getHeight(), this);
 	   }
 	   back=false;
+	   if(this.arraysize>0)
+	   { animalist.get(0).drawObject(g);}
 	     
 	}
 	public void setBackground1(int num)
@@ -206,6 +208,22 @@ public class ZooPanel extends JPanel implements ActionListener{
 	}
 	public void manageZoo()
 	{
-		
+		if(isChange())
+		{
+			repaint();
+		}
+	}
+	
+	public boolean isChange()
+	{
+		for(int i=0;i<this.arraysize;i++)
+		{
+			if(animalist.get(i).getChanges())
+			{
+				animalist.get(i).setChanges(false);
+				return true;
+			}
+		}
+		return false;
 	}
 }

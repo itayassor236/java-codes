@@ -4,6 +4,10 @@ import food.*;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import diet.IDiet;
 import utilities.MessageUtility;
@@ -32,7 +36,7 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	private int y_dir=1;
 	private int eatCount;
 	private ZooPanel pan;
-	private BufferedImage img1, img2;
+	private BufferedImage img1=null, img2;
 /**
  * 
  * @param name_
@@ -220,85 +224,37 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
 	}
 	public void loadImages(String nm)
 	{
-		if(nm=="lio")
-		{
 			if(col=="Blue")
-			{
-				img1=new ImageIo.read(new File(PICTURE_PATH+"lio_b_1.png"));
-
+			{try {
+				this.img1 = ImageIO.read(new File(IDrawable.PICTURE_PATH+"\\"+nm+"_b_1.png"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			}
 			else if(col=="Red")
 			{
-				img1=new ImageIo.read(new File(PICTURE_PATH++nm="_"+"b_1.png"))
+				try {
+					this.img1 = ImageIO.read(new File(IDrawable.PICTURE_PATH+"\\"+nm+"_r_1.png"));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			else if(col=="Natural")
+			{
+				try {
+					this.img1 = ImageIO.read(new File(IDrawable.PICTURE_PATH+"\\"+nm+"_n_1.png"));
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			else
 			{
-				img1=new ImageIo.read(new File(PICTURE_PATH++nm="_"+"b_1.png"))
+				System.out.println("Cannot load image");
 			}
-			
-		}
-		if(nm=="bea")
-		{
-			if(col=="Blue")
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
-			}
-			else if(col=="Red")
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
-			}
-			else
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
-			}
-		}
-		if(nm=="elf")
-		{
-			if(col=="Blue")
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
-			}
-			else if(col=="Red")
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
-			}
-			else
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
-			}
-		}
-		if(nm=="grf")
-		{
-			if(col=="Blue")
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))
-			}
-			else if(col=="Red")
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH++nm="_"+"b_1.png"))	
-			}
-			else
-			{
-				
-			}
-		}
-		if(nm=="trt")
-		{
-			if(col=="Blue")
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH+nm="_"+"b_1.png"))
-			}
-			else if(col=="Red")
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH+nm="_"+"b_1.png"))
-			}
-			else
-			{
-				img1=new ImageIo.read(new File(IDrawable.PICTURE_PATH+nm="_"+"b_1.png"))
-			}
-		}
 	}
-	
-}
 
+}	
 

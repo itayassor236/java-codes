@@ -155,6 +155,9 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 newanimal.setChanges(true);
+						 newanimal.loadImages("lio");
+						 zPanel.manageZoo();
 			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    		
 			    		 
@@ -168,6 +171,9 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 newanimal.setChanges(true);
+						 newanimal.loadImages("bea");
+						 zPanel.manageZoo();
 			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    	     
 			    		 
@@ -182,6 +188,9 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 newanimal.setChanges(true);
+						 newanimal.loadImages("elf");
+						 zPanel.manageZoo();
 			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    		 
 			    	 }
@@ -194,10 +203,11 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
-			    		 JOptionPane.showMessageDialog(null, "Animal added");
-			    		 
-			    		 
-			    	 }
+			    		 newanimal.setChanges(true);
+						 newanimal.loadImages("grf");
+						 zPanel.manageZoo();
+						 JOptionPane.showMessageDialog(null, "Animal added");
+			    		 }
 			    	 if(animaltype==5)
 			    	 {
 			    		 tc++;
@@ -207,6 +217,9 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
 			    		 zPanel.setArraySize(zPanel.getArraysize()+1);
 			    		 zPanel.animalist.add(newanimal);
 			    		 zPanel.setListofanimals(name);
+			    		 newanimal.setChanges(true);
+						 newanimal.loadImages("trt");
+						 zPanel.manageZoo();
 			    		 JOptionPane.showMessageDialog(null, "Animal added");
 			    		 
 			    	 }
