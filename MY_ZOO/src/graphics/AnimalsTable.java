@@ -19,6 +19,7 @@ public class AnimalsTable extends AbstractTableModel{
 
     public AnimalsTable(ZooPanel zp)
     {
+
         this.zp=zp;
         data=new ArrayList<Animal>();
         for (int i=0;i<zp.getArraysize();i++)
