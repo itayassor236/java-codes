@@ -1,6 +1,7 @@
 package animals;
 import diet.IDiet;
 import food.IEdible;
+import graphics.ZooPanel;
 import mobility.Point;
 import utilities.MessageUtility;
 /**
@@ -13,14 +14,15 @@ public abstract class Chew extends Animal{
     private String name;
     private double weight;
     private IDiet diet;
+    private ZooPanel zp;
 
     public Chew(String name,Point location)
     {
         super(name,location);
     }
 
-    public Chew(Point startlocation, int size, String col, int horSpeed, int verSpeed) {
-        super(startlocation,size,col,horSpeed,verSpeed);
+    public Chew(Point startlocation, int size, String col, int horSpeed, int verSpeed,ZooPanel zp) {
+        super(startlocation,size,col,horSpeed,verSpeed,zp);
 
     }
 

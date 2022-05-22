@@ -1,4 +1,5 @@
 package animals;
+import graphics.ZooPanel;
 import mobility.Point;
 
 import diet.Herbivore;
@@ -47,9 +48,9 @@ public class Giraffe extends Chew {
         MessageUtility.logConstractor("Giraffe", name);
     }
 
-    public Giraffe(int size,String col,int horSpeed,int verSpeed)
+    public Giraffe(int size,String col,int horSpeed,int verSpeed,ZooPanel zp)
     {
-        super(gstartpoint,size,col,horSpeed,verSpeed);
+        super(gstartpoint,size,col,horSpeed,verSpeed,zp);
         super.setDiet(giraffediet);
         super.setWeight(size*2.2);
 

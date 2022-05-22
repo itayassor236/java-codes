@@ -1,6 +1,7 @@
 package animals;
 import diet.IDiet;
 import food.IEdible;
+import graphics.ZooPanel;
 import mobility.Point;
 import utilities.MessageUtility;
 /**
@@ -19,8 +20,8 @@ public abstract class Roar extends Animal{
         super(name,location);
     }
 
-    public Roar(Point startlocation, int size, String col, int horSpeed, int verSpeed) {
-        super(startlocation,size,col,horSpeed,verSpeed);
+    public Roar(Point startlocation, int size, String col, int horSpeed, int verSpeed,ZooPanel zp) {
+        super(startlocation,size,col,horSpeed,verSpeed,zp);
 
     }
 

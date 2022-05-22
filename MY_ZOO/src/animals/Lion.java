@@ -1,4 +1,5 @@
 package animals;
+import graphics.ZooPanel;
 import mobility.Point;
 import diet.Carnivore;
 import diet.IDiet;
@@ -16,6 +17,7 @@ public class Lion extends Roar {
     private int scarCount;
     private final static IDiet liondiet=new Carnivore();
     private final static Point startlocation=new Point(20,0);
+    private ZooPanel zp;
 
     /**
      *
@@ -43,9 +45,9 @@ public class Lion extends Roar {
         MessageUtility.logConstractor("Lion", name);
     }
 
-    public Lion(int size,String col,int horSpeed,int verSpeed)
+    public Lion(int size, String col, int horSpeed, int verSpeed,ZooPanel zp)
     {
-        super(startlocation,size,col,horSpeed,verSpeed);
+        super(startlocation,size,col,horSpeed,verSpeed,zp);
         super.setDiet(liondiet);
         super.setWeight(size*0.8);
 

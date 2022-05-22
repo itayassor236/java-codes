@@ -50,41 +50,9 @@ public class ZooPanel extends JPanel implements ActionListener{
         try { pic = ImageIO.read(new File("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg")); }
         catch (IOException ie) { System.out.println("Cannot load image"); }
 
-        //g1=this.getComponentGraphics(g1)
-//		p=new JPanel(new FlowLayout());
-//		this.setLayout(new BorderLayout());
-//		add_animal=new JButton("Add Animal");
-//		p.add(add_animal);
-//		add_animal.addActionListener(this);
-//		move_animal=new JButton("Move Animal");
-//		p.add(move_animal);
-//		move_animal.addActionListener(this);
-//		clear=new JButton("Clear");
-//		p.add(clear);
-//		clear.addActionListener(this);
-//		food=new JButton("Food");
-//		p.add(food);
-//		food.addActionListener(this);
-//		info=new JButton("Info");
-//		p.add(info);
-//		info.addActionListener(this);
-//		exit=new JButton("Exit");
-//		p.add(exit);
-//		exit.addActionListener(this);
-//		add_animal.setFocusable(false);
-//		move_animal.setFocusable(false);
-//		clear.setFocusable(false);
-//		food.setFocusable(false);
-//		info.setFocusable(false);
-//		exit.setFocusable(false);
-//		this.setLayout(new BorderLayout());
-//		this.add(p,BorderLayout.SOUTH);
-//		this.setVisible(true);
+
     }
-//	public ZooPanel()
-//	{
-//		pic=new ImageIcon("C://Users//User//git//java-codes//ZOO2//src//graphics//savanna.jpg").getImage();
-//	    this.setPreferredSize(new Dimension(800,600));
+
 
     public void paintComponent(Graphics g) {
 
@@ -231,7 +199,7 @@ public class ZooPanel extends JPanel implements ActionListener{
             for (int i = 0; i < this.getArraysize(); i++) {
                 for (int j = 0; j < this.getArraysize(); j++) {
                     double d = animalist.get(i).calcDistance(animalist.get(j).getLocation());
-                    if (i != j && animalist.get(i).checkDistance(d) && animalist.get(i).eat(animalist.get(j))) {
+                    if (i != j && d<animalist.get(j).getweight() && animalist.get(i).getDiet().canEat(animalist.get(j).getFoodType())&&animalist.get(i).getweight()>=2*animalist.get(j).getweight()) {
                         this.setArraySize(this.getArraysize()-1);
                         animalist.remove(j);
                         repaint();

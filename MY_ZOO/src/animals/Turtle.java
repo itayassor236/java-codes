@@ -1,4 +1,5 @@
 package animals;
+import graphics.ZooPanel;
 import mobility.Point;
 import diet.Herbivore;
 import diet.IDiet;
@@ -44,11 +45,12 @@ public class Turtle extends Chew {
         MessageUtility.logConstractor("Turtle", name);
     }
 
-    public Turtle(int size,String col,int horSpeed,int verSpeed)
+    public Turtle(int size,String col,int horSpeed,int verSpeed,ZooPanel zp)
     {
-        super(tstartpoint,size,col,horSpeed,verSpeed);
+        super(tstartpoint,size,col,horSpeed,verSpeed,zp);
         super.setDiet(turtlediet);
         super.setWeight(size*0.5);
+
 
     }
     /**

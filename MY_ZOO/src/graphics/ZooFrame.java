@@ -51,6 +51,7 @@ public class ZooFrame extends JFrame implements ActionListener{
     private JButton info;
     private JButton exit2;
     private BufferedImage img1, img2,pic=null;
+    private Thread controller;
 
     public ZooFrame()
     {
@@ -85,7 +86,8 @@ public class ZooFrame extends JFrame implements ActionListener{
         p.add(exit2);
         exit2.addActionListener(this);
         add_animal.setFocusable(false);
-        move_animal.setFocusable(false);
+        sleep.setFocusable(false);
+        wakeUp.setFocusable(false);
         clear.setFocusable(false);
         food.setFocusable(false);
         info.setFocusable(false);
@@ -200,7 +202,12 @@ public class ZooFrame extends JFrame implements ActionListener{
 //
 //        }
         if(e.getSource()==sleep)
-        {}
+        {
+            for(int i=0;i<zp.getArraysize();i++)
+            {
+
+            }
+        }
         if(e.getSource()==wakeUp)
         {}
         if(e.getSource()==clear)

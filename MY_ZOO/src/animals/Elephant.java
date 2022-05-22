@@ -1,4 +1,5 @@
 package animals;
+import graphics.ZooPanel;
 import mobility.Point;
 import diet.Herbivore;
 import diet.IDiet;
@@ -43,9 +44,9 @@ public class Elephant extends Chew {
         MessageUtility.logConstractor("Elephant", name);
     }
 
-    public Elephant(int size,String col,int horSpeed,int verSpeed)
+    public Elephant(int size,String col,int horSpeed,int verSpeed,ZooPanel zp)
     {
-        super(estartpoint,size,col,horSpeed,verSpeed);
+        super(estartpoint,size,col,horSpeed,verSpeed,zp);
         super.setDiet(elephantdiet);
         super.setWeight(size*10);
 

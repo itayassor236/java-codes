@@ -150,14 +150,14 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
                     {
                         lc++;
                         name="Lion"+lc;
-                        newanimal=new Lion(size1,animalcolor,hspeed,vspeed);
+                        newanimal=new Lion(size1,animalcolor,hspeed,vspeed,zPanel);
                         newanimal.setName(name);
-                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         zPanel.animalist.add(newanimal);
                         zPanel.setListofanimals(name);
                         newanimal.setChanges(true);
                         newanimal.loadImages("lio");
                         zPanel.manageZoo();
+                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         JOptionPane.showMessageDialog(null, "Animal added");
 
 
@@ -166,14 +166,15 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
                     {
                         bc++;
                         name="Bear"+bc;
-                        newanimal=new Bear(size1,animalcolor,hspeed,vspeed);
+                        newanimal=new Bear(size1,animalcolor,hspeed,vspeed,zPanel);
                         newanimal.setName(name);
-                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         zPanel.animalist.add(newanimal);
                         zPanel.setListofanimals(name);
                         newanimal.setChanges(true);
                         newanimal.loadImages("bea");
+                        zPanel.animalist.get(zPanel.getArraysize()).run();
                         zPanel.manageZoo();
+                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         JOptionPane.showMessageDialog(null, "Animal added");
 
 
@@ -183,14 +184,14 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
                     {
                         ec++;
                         name="Elephant"+ec;
-                        newanimal=new Elephant(size1,animalcolor,hspeed,vspeed);
+                        newanimal=new Elephant(size1,animalcolor,hspeed,vspeed,zPanel);
                         newanimal.setName(name);
-                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         zPanel.animalist.add(newanimal);
                         zPanel.setListofanimals(name);
                         newanimal.setChanges(true);
                         newanimal.loadImages("elf");
                         zPanel.manageZoo();
+                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         JOptionPane.showMessageDialog(null, "Animal added");
 
                     }
@@ -198,28 +199,28 @@ public class AddAnimalDialog extends JDialog implements ActionListener{
                     {
                         gc++;
                         name="Giraffe"+gc;
-                        newanimal=new Giraffe(size1,animalcolor,hspeed,vspeed);
+                        newanimal=new Giraffe(size1,animalcolor,hspeed,vspeed,zPanel);
                         newanimal.setName(name);
-                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         zPanel.animalist.add(newanimal);
                         zPanel.setListofanimals(name);
                         newanimal.setChanges(true);
                         newanimal.loadImages("grf");
                         zPanel.manageZoo();
+                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         JOptionPane.showMessageDialog(null, "Animal added");
                     }
                     if(animaltype==5)
                     {
                         tc++;
                         name="Turtle"+tc;
-                        newanimal=new Turtle(size1,animalcolor,hspeed,vspeed);
+                        newanimal=new Turtle(size1,animalcolor,hspeed,vspeed,zPanel);
                         newanimal.setName(name);
-                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         zPanel.animalist.add(newanimal);
                         zPanel.setListofanimals(name);
                         newanimal.setChanges(true);
                         newanimal.loadImages("trt");
                         zPanel.manageZoo();
+                        zPanel.setArraySize(zPanel.getArraysize()+1);
                         JOptionPane.showMessageDialog(null, "Animal added");
 
                     }

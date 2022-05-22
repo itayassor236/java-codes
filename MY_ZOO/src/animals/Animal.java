@@ -31,14 +31,15 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
     private int horSpeed;
     private int verSpeed;
     private boolean coordChanged;
-
     private int x_dir=1;
     private int y_dir=1;
     private int eatCount;
     private ZooPanel pan;
-    private BufferedImage img1=null, img2;
+    private BufferedImage img1=null, img2=null;
     protected Thread thread;
-    protected boolean threadSuspended;
+    protected boolean threadSuspended=false;
+    private int newx,newy;
+
     /**
      *
      * @param name_
@@ -54,7 +55,7 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
     }
 
 
-    public Animal(Point point,int size,String col,int horSpeed,int verSpeed)
+    public Animal(Point point,int size,String col,int horSpeed,int verSpeed,ZooPanel zp)
     {
         super(point);
         setName(" ");
@@ -64,6 +65,7 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
         this.col=col;
         this.horSpeed=horSpeed;
         this.verSpeed=verSpeed;
+        this.pan=zp;
     }
     /**
      *
@@ -234,6 +236,12 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+            try {
+                this.img2 = ImageIO.read(new File(IDrawable.PICTURE_PATH+"\\"+nm+"_b_2.png"));
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
         else if(col=="Red")
         {
@@ -243,11 +251,23 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
+            try {
+                this.img2 = ImageIO.read(new File(IDrawable.PICTURE_PATH+"\\"+nm+"_r_2.png"));
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
         else if(col=="Natural")
         {
             try {
                 this.img1 = ImageIO.read(new File(IDrawable.PICTURE_PATH+"\\"+nm+"_n_1.png"));
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            try {
+                this.img2 = ImageIO.read(new File(IDrawable.PICTURE_PATH+"\\"+nm+"_n_2.png"));
             } catch (IOException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -267,4 +287,43 @@ public abstract class Animal extends Mobile implements IEdible,IDrawable,IAnimal
         return false;
     }
 
+    public void setSuspended()
+    {
+     this.threadSuspended=true;
+    }
+    public void setResumed()
+    {
+     this.threadSuspended=false;
+    }
+    public void run() {
+        while(!this.threadSuspended) {
+            newx = getxlocation() + horSpeed * x_dir;
+            newy = getylocation() + verSpeed * y_dir;
+            this.coordChanged = true;
+            if (newx > 800) {
+                x_dir = -1;
+                newx = getxlocation() + horSpeed * x_dir;
+            }
+            if (newx < 0) {
+                x_dir = 1;
+                newx = getxlocation() + horSpeed * x_dir;
+            }
+            if (newy > 600) {
+                y_dir = -1;
+                newy = getylocation() + verSpeed * y_dir;
+            }
+            if (newy < 0) {
+                y_dir = 1;
+                newy = getylocation() + verSpeed * y_dir;
+            }
+            Point p = new Point(newx, newy);
+            this.setLocation(p);
+            try {
+                thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            this.pan.repaint();
+        }
+    }
 }

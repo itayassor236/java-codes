@@ -1,4 +1,5 @@
 package animals;
+import graphics.ZooPanel;
 import mobility.Point;
 import diet.Omnivore;
 import diet.IDiet;
@@ -13,63 +14,57 @@ import utilities.MessageUtility;
 public class Bear extends Roar {
 
     private String furColor;
-    private final static IDiet beardiet=new Omnivore();
-    private final static Point startlocation=new Point(100,5);
+    private final static IDiet beardiet = new Omnivore();
+    private final static Point startlocation = new Point(100, 5);
 
     /**
-     *
      * @param name
      */
-    public Bear(String name)
-    {
-        super(name,startlocation);
+    public Bear(String name) {
+        super(name, startlocation);
         super.setWeight(308.2);
         super.setDiet(beardiet);
         setFurColor("GRAY");
         MessageUtility.logConstractor("Bear", name);
     }
+
     /**
-     *
      * @param name
      * @param p
      */
-    public Bear(String name,Point p)
-    {
-        super(name,p);
+    public Bear(String name, Point p) {
+        super(name, p);
         super.setWeight(308.2);
         super.setDiet(beardiet);
         setFurColor("GRAY");
         MessageUtility.logConstractor("Bear", name);
     }
 
-    public Bear(int size,String col,int horSpeed,int verSpeed)
-    {
-        super(startlocation,size,col,horSpeed,verSpeed);
+    public Bear(int size, String col, int horSpeed, int verSpeed,ZooPanel zp) {
+        super(startlocation, size, col, horSpeed, verSpeed,zp);
         super.setDiet(beardiet);
-        super.setWeight(size*1.5);
-
+        super.setWeight(size * 1.5);
 
 
     }
+
     /**
      * @return food type
      */
-    public EFoodType getFoodType()
-    {
+    public EFoodType getFoodType() {
         return EFoodType.MEAT;
     }
+
     /**
      * @param food
      * @return true or false
      */
-    public boolean eat(IEdible food)
-    {
+    public boolean eat(IEdible food) {
         double newweight = super.getDiet().eat(this, food);
-        if (newweight>0.0)
-        {
+        if (newweight > 0.0) {
             super.makeSound();
-            super.setWeight(newweight+this.getweight());
-            super.setEatCount(super.getEatCount()+1);
+            super.setWeight(newweight + this.getweight());
+            super.setEatCount(super.getEatCount() + 1);
             return true;
 
         }
@@ -77,46 +72,37 @@ public class Bear extends Roar {
     }
 
     /**
-     *
      * @param fur
      * @return true or false
      */
-    public boolean setFurColor(String fur)
-    {
-        if(fur.equals("GRAY")||fur.equals("BLACK")||fur.equals("WHITE"))
-        {
-            this.furColor=fur;
-            MessageUtility.logSetter(getName(), "setFurColor()",fur, true);
+    public boolean setFurColor(String fur) {
+        if (fur.equals("GRAY") || fur.equals("BLACK") || fur.equals("WHITE")) {
+            this.furColor = fur;
+            MessageUtility.logSetter(getName(), "setFurColor()", fur, true);
             return true;
-        }
-        else
-        {
-            MessageUtility.logSetter(getName(), "setFurColor()",fur, false);
+        } else {
+            MessageUtility.logSetter(getName(), "setFurColor()", fur, false);
             return false;
         }
     }
+
     /**
-     *
      * @return color
      */
-    public String getFurColor()
-    {
-        MessageUtility.logGetter(getName(), "getFurColor()",this.furColor);
+    public String getFurColor() {
+        MessageUtility.logGetter(getName(), "getFurColor()", this.furColor);
         return this.furColor;
     }
 
-    public void roar()
-    {
-        MessageUtility.logSound(super.getName(),"Stands on its hind legs, roars and scratches its belly");
+    public void roar() {
+        MessageUtility.logSound(super.getName(), "Stands on its hind legs, roars and scratches its belly");
     }
+
     /**
      * @return Bear name
      */
-    public String toString()
-    {
+    public String toString() {
         return "[Bear]:" + this.getName();
     }
-
-
 
 }

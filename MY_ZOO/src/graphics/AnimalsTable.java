@@ -14,7 +14,7 @@ public class AnimalsTable extends AbstractTableModel{
     private ArrayList<Animal> data;
     private ZooPanel zp;
     private final String[] columnNames = {"Name","Color","Weight","Hor.speed","Ver.speed","Eat counter"};
-    private int total=0;
+    private int total=0,size=0;
     private Animal a;
 
     public AnimalsTable(ZooPanel zp)
@@ -25,9 +25,11 @@ public class AnimalsTable extends AbstractTableModel{
         {
             data.add(zp.animalist.get(i));
             total+=zp.animalist.get(i).getEatCount();
+            size++;
         }
         Point p=new Point(0,0);
-        a= new Animal("Total", p) {
+        a= new Animal( "Total",p)
+        {
             @Override
             public EFoodType getFoodType() {
                 return null;
@@ -43,13 +45,14 @@ public class AnimalsTable extends AbstractTableModel{
                 return "Total";
             }
         };
+        size++;
         a.setEatCount(total);
         data.add(a);
     }
     @Override
     public int getRowCount() {
         // TODO Auto-generated method stub
-        return zp.getArraysize();
+        return size;
     }
 
     @Override
@@ -73,10 +76,22 @@ public class AnimalsTable extends AbstractTableModel{
                 case 1:
                     return adata.getColor();
                 case 2:
+                    if(adata.getweight()==0.0)
+                    {
+                        return " ";
+                    }
                     return adata.getweight();
                 case 3:
+                    if(adata.gethspeed()==0)
+                    {
+                        return " ";
+                    }
                     return adata.gethspeed();
                 case 4:
+                    if(adata.getvspeed()==0)
+                    {
+                        return " ";
+                    }
                     return adata.getvspeed();
                 case 5:
                     return adata.getEatCount();
